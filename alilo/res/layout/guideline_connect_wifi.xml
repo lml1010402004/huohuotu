@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/startup_guideline1_background"
+    >
+
+    <include layout="@layout/startupguideline_title" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ListView
+            android:id="@+id/wifi_scanResult"
+            android:layout_width="736dp"
+            android:layout_height="290dp"
+            android:layout_marginLeft="144dp"
+            android:layout_marginTop="162dp"
+            android:background="#ffffff" >
+        </ListView>
+    </LinearLayout>
+    <Button
+        android:id="@+id/startup_next_step"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="440dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/startup_next_step_selector" />
+
+    <Button
+        android:id="@+id/startup_jump_over"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="440dp"
+        android:layout_marginTop="530dp"
+        android:background="@drawable/startup_jump_over_selector" />
+
+</RelativeLayout>

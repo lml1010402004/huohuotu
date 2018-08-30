@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+      <item android:state_pressed="true" android:drawable="@drawable/ic_15_pressed"></item>
+    <!-- 非触摸模式（有焦点有点击）按下的时候 -->
+    <item android:drawable="@drawable/ic_15"/>
+</selector>

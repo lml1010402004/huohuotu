@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+android:gravity="center"
+    android:background="@drawable/safemachinesm_background"
+    >
+
+       <FrameLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		   android:layout_marginTop="10dp"
+		   android:layout_gravity="center"
+        >
+    <ImageView 
+        android:id="@+id/show_battery_imageview"
+        android:layout_width="400dp"
+        android:layout_height="320dp"
+        />
+		</FrameLayout>
+
+   <FrameLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+		android:layout_gravity="center"
+	
+        >
+	 <TextView 
+       android:id="@+id/power_percentage"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:textSize="40dp"
+		android:layout_marginRight="158dp"
+		android:textColor="@color/white"
+        />
+     </FrameLayout>
+    
+    
+    
+
+</FrameLayout>

@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomePageActivity" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">       
+     </android.support.v4.view.ViewPager>
+    
+    <RelativeLayout
+		android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal" >     
+
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:src="@drawable/user_title" />
+
+        <ImageView
+            android:id="@+id/coin"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/setting"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/user"
+            android:src="@drawable/coin" />
+
+        <ImageView
+            android:id="@+id/image_battery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/digitalClock1"
+            android:src="@drawable/battery" />
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+			 android:visibility="invisible"
+            android:background="@null"
+            android:src="@drawable/setting" />
+
+        <DigitalClock
+            android:id="@+id/digitalClock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@+id/setting"
+            android:layout_marginTop="10dp"
+            android:cursorVisible="true"
+            android:text="@string/DigitalClock"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/iv_wifi_status"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/image_battery"
+            android:src="@drawable/wifi_signal" />
+
+        <ImageView
+            android:id="@+id/age_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/age_title" />
+
+        <TextView
+            android:id="@+id/coin_sum"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/coin"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="33dp"
+            android:text="@string/ten"
+			  android:padding="2dp"
+			android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_alignLeft="@+id/age_title"
+            android:layout_marginLeft="1dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:padding="5dp"
+			android:gravity="center"
+			/>
+
+    </RelativeLayout>
+    
+	<LinearLayout
+	    android:id="@+id/viewGroup"
+		android:layout_width="match_parent"
+		android:layout_height="26dp"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:orientation="horizontal"
+		android:gravity="center">    
+	</LinearLayout> 
+	
+</RelativeLayout>

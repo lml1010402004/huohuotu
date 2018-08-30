@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.alilo"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="5"
+    android:versionName="5.0" >
+
+    <!-- android:sharedUserId="android.uid.system" -->
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="23" />
+		<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+	<uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+	<uses-permission android:name="android.permission.FORCE_STOP_PACKAGES"/>  
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
+   </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+	 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
+    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+    <!-- /设置系统亮度权限 -->
+    
+    <uses-permission android:name="android.permission.BATTERY_STATS" >
+    </uses-permission>
+    
+   
+      <uses-permission android:name="android.permission.DEVICE_POWER"></uses-permission> 
+    
+<uses-permission android:name="android.permission.SET_TIME"></uses-permission>
+    <!-- 设置系统时间的权限 -->
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" >
+    </uses-permission>
+    
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+	<uses-permission android:name="android.permission.MASTER_CLEAR"/>
+   
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/aaa"
+        android:label="@string/app_name"
+		android:largeHeap="true"
+	
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.android.alilo.HomePageActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@style/MyHomeActivityTheme">
+
+            <!--
+                 <intent-filter>
+
+             
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                
+                
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+               
+            </intent-filter>
+            -->
+        </activity>
+
+        <service android:name=".AudioService" />
+
+        <activity
+            android:name=".setting.Setting"
+            android:screenOrientation="landscape"
+           android:launchMode="singleInstance"
+          android:theme="@android:style/Theme.Holo.Light.NoActionBar" /> <!-- 20161221_wangjx_注册intent开启设置 -->
+
+		    <activity
+            android:name=".RestoreFactory"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+
+			
+
+        <activity
+            android:name=".setting.SettingBrightnessManager"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启亮度 -->
+
+        <activity
+            android:name=".setting.SettingSoundManager"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启声音 -->
+
+        <activity
+            android:name=".setting.SettingTimerManager"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" /> <!-- 20161221_wangjx_注册intent开启时间 -->
+
+        <activity
+            android:name=".setting.SettingWifiManager"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity> <!-- 20161221_wangjx_注册intent开启WIFI -->
+
+        <activity
+            android:name=".setting.SettingProtectManager"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启护眼 -->
+
+        <activity
+            android:name=".TestActivityLJSW"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+			android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单逻辑思维 -->
+
+        <activity
+            android:name=".TestActivityPDTL"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单判断推理 -->
+
+        <activity
+            android:name=".TestActivitySXKJ"
+            android:screenOrientation="landscape"
+				android:launchMode="singleInstance"
+					android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单数学空间 -->
+
+        <activity
+            android:name=".TestActivityZZLXL"
+            android:screenOrientation="landscape"
+				android:launchMode="singleInstance"
+					android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单专注力训练 -->
+
+        <activity
+            android:name=".TestActivityCZLXT"
+            android:screenOrientation="landscape"
+				android:hardwareAccelerated="true"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单创造力系统 -->
+
+        <activity
+            android:name=".TestActivityYDSGC"
+            android:screenOrientation="landscape"
+				android:hardwareAccelerated="true"
+				android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单引导式观察 -->
+
+        <activity
+            android:name=".LjswNrJs"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单逻辑思维内容介绍 -->
+        <activity
+            android:name=".ZZLTXJS"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".YDSGCJS"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".CZLJS"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".LjswNrJs2"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- 20161221_wangjx_注册intent开启二级菜单逻辑思维内容介绍 -->
+			 <activity
+            android:name=".SxkjJs"
+			 android:screenOrientation="landscape"
+			 android:launchMode="singleInstance"
+           android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+
+        <activity
+            android:name=".NoticeEyeProtectDialog"
+            android:label="@string/eye_notice"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@style/NoticeEyeProtectTheme" >
+        </activity>
+        <activity
+            android:name="com.android.alilo.setting.SettingBabyBasicInfo"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+			 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.android.startupguideline.StartupConnectWifi"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.android.startupguideline.StartupSetBabyInfo"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+      	 android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity
+            android:name="com.android.startupguideline.StartupManagePassword"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.android.startupguideline.FirstActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+			android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+               <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" /> 
+
+            </intent-filter>
+        </activity>
+		<activity 
+            android:name=".SafetyMachinesm"
+            android:label="@string/safemachinesm"
+			 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			 android:launchMode="singleInstance"
+            ></activity>
+
+        <receiver android:name="com.android.broadcast.MyBrodcastReceiver" >
+            <intent-filter>
+                <action android:name="com.booyue.l1.game.pass" />
+            </intent-filter>
+        </receiver>
+
+		
+        <receiver
+            android:name="com.android.broadcast.SystemLauncherPageCountBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.booyue.action.APP_LAUNCHER_PAGE_COUNT"></action>
+            </intent-filter>
+        </receiver>
+
+
+		<receiver android:name="com.android.server.MasterClearReceiver"
+		android:permission="android.permission.MASTER_CLEAR"
+		android:priority="100">
+      <intent-filter>
+      <!-- For Checkin, Settings, etc.: action=MASTER_CLEAR -->
+      <action android:name="android.intent.action.MASTER_CLEAR"/>
+ 
+      <!-- MCS always uses REMOTE_INTENT: category=MASTER_CLEAR -->
+      <category android:name="android.intent.category.MASTER_CLEAR_NOTIFICATION"/>
+      </intent-filter>
+</receiver>
+
+
+
+        <service android:name=".MonitorService" >
+            <intent-filter android:priority="1000" >
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

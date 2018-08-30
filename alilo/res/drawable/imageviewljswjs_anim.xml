@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/ljsw_js1" android:duration="150" />
+    <item android:drawable="@drawable/ljsw_js2" android:duration="150" />
+    <item android:drawable="@drawable/ljsw_js3" android:duration="150" />
+    <item android:drawable="@drawable/ljsw_js4" android:duration="150" />
+    <item android:drawable="@drawable/ljsw_js5" android:duration="150" />
+    <item android:drawable="@drawable/ljsw_js6" android:duration="150" /> 
+	<item android:drawable="@drawable/ljsw_js7" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js8" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js9" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js10" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js11" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js12" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js13" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js14" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js15" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js16" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js17" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js18" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js19" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js20" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js21" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js22" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js23" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js24" android:duration="150" />
+	<item android:drawable="@drawable/ljsw_js25" android:duration="150" />
+</animation-list>

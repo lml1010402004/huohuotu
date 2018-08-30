@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/setting_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:orientation="horizontal" >
+        
+
+        <TextView
+            android:id="@+id/wifi_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/settings_wifi_text"
+            android:textColor="@color/white"
+            android:textSize="10pt" />
+
+        <ImageButton
+            android:id="@+id/wifi_title_back"
+            android:layout_width="40dip"
+            android:layout_height="60dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="14dp"
+            android:background="#00000000"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+		   android:orientation="horizontal"
+        android:layout_marginTop="10dip" >
+        
+         <ToggleButton
+            style="@style/item"
+            android:id="@+id/switch_wifi"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+			android:textOn=""
+			 android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="15dp"
+			android:textOff=""
+			android:background="@color/transparent"
+             android:button="@drawable/toggle_button" 
+			/>
+
+        <!--TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:text="@string/settings_wifi_wlan"
+            android:textSize="10pt" />
+
+        <ToggleButton
+            android:id="@+id/tb_wifi_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dip"
+            android:background="@drawable/wifi_off"
+            android:textOff=""
+            android:textOn="" /-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_wifi_connect"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="1dip" >
+
+        <TextView
+            android:id="@+id/tv_wifi_connect_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:text="@string/settings_wifi_wlan"
+            android:textColor="#000000"
+            android:textSize="10pt" />
+
+        <TextView
+            android:id="@+id/tv_wifi_connect_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_wifi_connect_name"
+            android:layout_marginLeft="30dip"
+            android:textColor="#2B8279"
+            android:textSize="6pt" />
+
+        <!--ImageButton
+            android:id="@+id/ib_wifi_content_next"
+            android:layout_width="15dip"
+            android:layout_height="29dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dip"
+            android:background="@drawable/next"
+           /-->
+
+        <ImageView
+            android:id="@+id/iv_wifi_status"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dip"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="10dip" >
+
+        <ListView
+            android:id="@+id/wifi_scanResult"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

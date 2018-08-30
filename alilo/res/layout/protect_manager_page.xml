@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/setting_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/project_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/settings_project_text" 
+            android:textColor="@color/white"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/project_confirm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+			 android:layout_marginLeft="20dp"
+            android:text="@string/recipes_search_confirm"
+            android:textColor="#ffffff"
+            android:textSize="13pt" />
+
+        <ImageButton
+            android:id="@+id/project_title_back"
+            android:layout_width="40dip"
+            android:layout_height="60dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:background="#00000000"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.82"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/time_protect" />
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="680dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_marginBottom="30dp"
+			android:maxHeight="10px"
+            android:minHeight="10px"
+			android:thumbOffset="0dip"
+			android:thumb="@drawable/brightness_slider_bg"
+            android:layout_marginLeft="197dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/dis_protect" />
+
+			    <TextView 
+            android:id="@+id/show_eye_protect_time"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:textColor="@color/mygreen"
+            android:text="@string/TIME"
+            android:textSize="20dp"
+            android:layout_marginLeft="895dp"
+            android:layout_marginTop="50dp"
+            />
+
+        <ImageView
+            android:id="@+id/open_nocheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/seekBar1"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_marginLeft="73dp"
+            android:layout_marginTop="21dp"
+            android:clickable="true"
+            android:src="@drawable/open_nocheck" />
+
+        <ImageView
+            android:id="@+id/close_nocheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/open_nocheck"
+            android:layout_marginLeft="51dp"
+            android:layout_toRightOf="@+id/open_nocheck"
+            android:clickable="true"
+            android:src="@drawable/close_nocheck" />
+    
+    </RelativeLayout>
+
+
+</LinearLayout>

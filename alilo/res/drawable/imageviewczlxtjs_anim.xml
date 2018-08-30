@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/czlxt_js1" android:duration="150" />
+    <item android:drawable="@drawable/czlxt_js2" android:duration="150" />
+    <item android:drawable="@drawable/czlxt_js3" android:duration="150" />
+    <item android:drawable="@drawable/czlxt_js4" android:duration="150" />
+    <item android:drawable="@drawable/czlxt_js5" android:duration="150" />
+    <item android:drawable="@drawable/czlxt_js6" android:duration="150" /> 
+	<item android:drawable="@drawable/czlxt_js7" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js8" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js9" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js10" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js11" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js12" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js13" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js14" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js15" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js16" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js17" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js18" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js19" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js20" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js21" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js22" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js23" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js24" android:duration="150" />
+	<item android:drawable="@drawable/czlxt_js25" android:duration="150" />
+</animation-list>

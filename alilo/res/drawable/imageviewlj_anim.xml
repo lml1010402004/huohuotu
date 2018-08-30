@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/imageviewlj_anim1" android:duration="150" />
+    <item android:drawable="@drawable/imageviewlj_anim2" android:duration="150" />
+    <item android:drawable="@drawable/imageviewlj_anim3" android:duration="150" />
+    <item android:drawable="@drawable/imageviewlj_anim4" android:duration="150" />
+    <item android:drawable="@drawable/imageviewlj_anim5" android:duration="150" />
+    <item android:drawable="@drawable/imageviewlj_anim6" android:duration="150" /> 
+	<item android:drawable="@drawable/imageviewlj_anim7" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim8" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim9" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim10" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim11" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim12" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim13" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim14" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim15" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim16" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim17" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim18" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim19" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim20" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim21" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim22" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim23" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim24" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim25" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim26" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim27" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim28" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim29" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim30" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim31" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim32" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim33" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim34" android:duration="150" />
+	<item android:drawable="@drawable/imageviewlj_anim35" android:duration="150" />
+</animation-list>

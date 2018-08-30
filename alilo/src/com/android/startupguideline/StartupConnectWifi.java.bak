@@ -1,0 +1,403 @@
+package com.android.startupguideline;
+import java.util.List;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.LayerDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Parcelable;
+import android.util.Log;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.alilo.HomePageActivity;
+import com.android.alilo.MyUtils;
+import com.android.alilo.R;
+import com.android.myUtils.SharedPreferencesUtil;
+import com.android.myUtils.Utils;
+
+public class StartupConnectWifi extends Activity implements OnClickListener,OnItemClickListener {
+
+	private Button startup_next_step,startup_jump_over;
+	private ListView wifi_ScanResult;
+	private List<ScanResult> mWifiList;
+	protected String ssid;
+	private WifiAdmin2 mWifiAdmin;
+	public int level;
+	ImageView iv_wifi_status; //检测wifi状态
+	
+	private ImageView image_battery;
+	private ClipDrawable clipDrawable;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		    IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+	        intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
+			intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
+			intentFilter.addAction(Intent.ACTION_BATTERY_LOW);		
+	        registerReceiver(batteryChangedReceiver, intentFilter);
+			 IntentFilter filter = new IntentFilter(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+	    	 registerReceiver(mReceiver, filter);
+	        initWifi();
+		//判断是否是第一次进入此app.
+	//	boolean flag = SharedPreferencesUtil.setRunningFirstTime(StartupConnectWifi.this,false);
+	//	if(flag){
+	//		Intent it = new Intent(StartupConnectWifi.this,HomePageActivity.class);
+	//		startActivity(it);
+	//		this.finish();
+	//		return ;
+	//	}
+
+		
+		setContentView(R.layout.guideline_connect_wifi);
+		 mWifiAdmin = new WifiAdmin2(StartupConnectWifi.this);
+		 mWifiAdmin.openWifi(StartupConnectWifi.this);
+		 initView();
+		
+		 image_battery = (ImageView) findViewById(R.id.image_battery);
+		 LayerDrawable layerDrawable = (LayerDrawable) image_battery.getDrawable();
+		 clipDrawable = (ClipDrawable)layerDrawable.findDrawableByLayerId(R.id.clip_drawable);
+		 startup_jump_over = (Button) findViewById(R.id.startup_jump_over);
+		 startup_jump_over.setOnClickListener(this);
+		 
+		 
+		
+	}
+	
+	
+	
+
+	
+	
+	//监听wifi状态变化
+	private BroadcastReceiver mReceiver = new BroadcastReceiver (){  
+	    @Override  
+	    public void onReceive(Context context, Intent intent) {   
+	        ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);  
+
+	        NetworkInfo wifiInfo = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);   
+	        if(wifiInfo.isConnected()){
+	        	WifiManager wifiManager = (WifiManager) context
+	    				.getSystemService(Context.WIFI_SERVICE);
+	        	String wifiSSID = wifiManager.getConnectionInfo()
+						.getSSID();
+	        	//Toast.makeText(context, wifiSSID+"连接成功", 1).show();
+	        	
+	        }	        	 
+	    }   
+	}; 
+	
+	
+	
+    ///////////////////end_20161222_wangjx_��ȡϵͳ�����ʾ   
+
+    ///////////////////begin_20161223_wangjx_��ȡϵͳwifi��ʾ   
+	BroadcastReceiver wifiReceiver = new BroadcastReceiver() {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			if (WifiManager.WIFI_STATE_CHANGED_ACTION
+					.equals(intent.getAction())) {// �������wifi�Ĵ���ر�
+				int wifiState = intent.getIntExtra(
+						WifiManager.EXTRA_WIFI_STATE, 0);
+				switch (wifiState) {
+				case WifiManager.WIFI_STATE_ENABLED:
+						if(Utils.isNetWorkAvailable(StartupConnectWifi.this)){
+					iv_wifi_status.setVisibility(View.VISIBLE);
+					showcon_wifi();
+					}
+					break;
+				case WifiManager.WIFI_STATE_DISABLED:
+					iv_wifi_status.setVisibility(View.GONE);
+				case WifiManager.WIFI_STATE_DISABLING:
+					iv_wifi_status.setVisibility(View.GONE);
+					break;
+
+				}
+			} else if (WifiManager.NETWORK_STATE_CHANGED_ACTION.equals(intent
+					.getAction())) {
+				Parcelable parcelableExtra = intent
+						.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
+				if (null != parcelableExtra) {
+					NetworkInfo networkInfo = (NetworkInfo) parcelableExtra;
+					if (networkInfo.isConnected()) {						
+						int level = Math
+								.abs(((WifiManager) getSystemService(WIFI_SERVICE))
+										.getConnectionInfo().getRssi());
+						iv_wifi_status.setImageLevel(level);
+
+					}
+				}
+			} else if (intent.getAction().equals(
+					WifiManager.RSSI_CHANGED_ACTION)) {
+				int mWifiRssi = intent.getIntExtra(WifiManager.EXTRA_NEW_RSSI,
+						-200);
+				int level = Math.abs(mWifiRssi);
+				iv_wifi_status.setImageLevel(level);
+			}
+
+		}
+
+	};
+	
+	/**
+	 */
+	WifiConfiguration con_wifi;
+	void showcon_wifi() {
+		if (con_wifi != null) {
+			int level = Math.abs(((WifiManager) getSystemService(WIFI_SERVICE))
+					.getConnectionInfo().getRssi());
+			iv_wifi_status.setImageLevel(level);
+
+		}
+	}
+	
+	
+	
+	Handler handler = new Handler();
+	private void initView(){
+		startup_next_step = (Button) findViewById(R.id.startup_next_step);
+		wifi_ScanResult = (ListView) findViewById(R.id.wifi_scanResult);
+wifi_ScanResult.setVerticalScrollBarEnabled(true);
+		startup_next_step.setOnClickListener(this);
+		wifi_ScanResult.setOnItemClickListener(this);
+		handler.post(refreshRunnable);
+		
+		iv_wifi_status = (ImageView) findViewById(R.id.iv_wifi_status);
+		
+	}
+	
+	IntentFilter mFilter;
+	private void initWifi(){
+		mFilter = new IntentFilter();
+		mFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+		mFilter.addAction(WifiManager.RSSI_CHANGED_ACTION);
+		mFilter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+		registerReceiver(wifiReceiver, mFilter);
+	}
+	
+	Runnable refreshRunnable = new Runnable() {
+		public void run() {
+			scanWifi();
+			adapter.notifyDataSetChanged();
+			handler.postDelayed(this, 5000);
+		}
+	};
+	
+	
+	MyAdapter adapter;
+	private void scanWifi(){
+		mWifiAdmin.startScan(StartupConnectWifi.this);
+		mWifiList=mWifiAdmin.getWifiList();
+		if(mWifiList!=null){
+			adapter = new MyAdapter(this, mWifiList);
+			wifi_ScanResult.setAdapter(adapter);
+		//	new Utility().setListViewHeightBasedOnChildren(wifi_ScanResult);
+		}
+		
+	}
+	
+	
+	
+	/*设置listview的高度*/
+	public class Utility { 
+	    public void setListViewHeightBasedOnChildren(ListView listView) { 
+	        ListAdapter listAdapter = listView.getAdapter();  
+	        if (listAdapter == null) { 
+	            return; 
+	        } 
+	        int totalHeight = 0; 
+	        for (int i = 0; i < listAdapter.getCount(); i++) { 
+	            View listItem = listAdapter.getView(i, null, listView); 
+	            listItem.measure(0, 0); 
+	            totalHeight += listItem.getMeasuredHeight(); 
+	        } 
+	        ViewGroup.LayoutParams params = listView.getLayoutParams(); 
+	        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1)); 
+	        listView.setLayoutParams(params); 
+	    } 
+	}
+	
+	
+	public class MyAdapter extends BaseAdapter{
+		LayoutInflater inflater;
+		List<ScanResult> list;
+		public MyAdapter(Context context, List<ScanResult> list){
+			this.inflater=LayoutInflater.from(context);
+			this.list=list;
+		}
+		@Override
+		public int getCount() {
+			return list.size();
+		}
+		@Override
+		public Object getItem(int position) {
+			return position;
+		}
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+		@SuppressLint({ "ViewHolder", "InflateParams" })
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View view=null;
+			view=inflater.inflate(R.layout.wifi_listitem, null);
+			ScanResult scanResult = list.get(position);
+			TextView wifi_ssid=(TextView) view.findViewById(R.id.ssid);
+			ImageView wifi_level=(ImageView) view.findViewById(R.id.wifi_level);
+			wifi_ssid.setText(scanResult.SSID);
+			Log.i("jack", "scanResult.SSID="+scanResult);
+			level=WifiManager.calculateSignalLevel(scanResult.level,5);
+			if(scanResult.capabilities.contains("WEP")||scanResult.capabilities.contains("PSK")||
+					scanResult.capabilities.contains("EAP")){
+				wifi_level.setImageResource(R.drawable.wifi_signal_lock);
+			}else{
+				wifi_level.setImageResource(R.drawable.wifi_signal_open);
+			}
+			wifi_level.setImageLevel(level);
+			//判断信号强度，显示对应的指示图标  
+			 return view;
+		}
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		switch (arg0.getId()) {
+		case R.id.startup_next_step:
+			 Intent intent1 = new Intent(StartupConnectWifi.this,StartupSetBabyInfo.class);
+			startActivity(intent1);
+			handler.removeCallbacks(refreshRunnable);
+			this.finish();
+			break;
+		case R.id.startup_jump_over:
+			Intent intent2= new Intent(StartupConnectWifi.this,HomePageActivity.class);
+			startActivity(intent2);
+			handler.removeCallbacks(refreshRunnable);
+			this.finish();
+			break;
+		default:
+			break;
+		}
+		
+		
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, final int arg2, long arg3) {
+		AlertDialog.Builder alert=new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.WifiPwdDialog));
+		
+		alert.setTitle(ssid);
+		alert.setMessage("输入密码");
+		final EditText et_password=new EditText(StartupConnectWifi.this);
+		final SharedPreferences preferences=getSharedPreferences("wifi_password",Context.MODE_PRIVATE);
+		et_password.setText(preferences.getString(ssid, ""));
+		alert.setView(et_password);
+		//alert.setView(view1);
+		alert.setPositiveButton("连接", new DialogInterface.OnClickListener(){
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String pw = et_password.getText().toString();
+				if(null == pw  || pw.length() < 8){
+			        Toast.makeText(StartupConnectWifi.this, "密码至少8位", Toast.LENGTH_SHORT).show();
+				return;    
+			}
+			Editor editor=preferences.edit();
+			editor.putString(ssid, pw);
+			editor.commit();		
+			mWifiAdmin.addNetwork(mWifiAdmin.CreateWifiInfo(mWifiList.get(arg2).SSID, et_password.getText().toString(), 3));
+		//	Toast.makeText(StartupConnectWifi.this, "ssid:"+ssid+"===="+"密码："+et_password.getText().toString(), Toast.LENGTH_SHORT).show();
+			}
+		});
+		alert.setNegativeButton("取消", new DialogInterface.OnClickListener(){
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				//
+				//mWifiAdmin.removeWifi(mWifiAdmin.getNetworkId());
+			}
+		});
+		alert.create();
+		alert.show();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		unregisterReceiver(batteryChangedReceiver);
+		unregisterReceiver(mReceiver);
+		unregisterReceiver(wifiReceiver);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+  if(!Utils.isNetWorkAvailable(StartupConnectWifi.this)){
+	    	   iv_wifi_status.setVisibility(View.INVISIBLE);
+	       }else{
+	    	   iv_wifi_status.setVisibility(View.VISIBLE);
+	       }
+
+	
+	}
+	
+    // �����仯�㲥
+    private BroadcastReceiver batteryChangedReceiver = new BroadcastReceiver() {
+
+        public void onReceive(Context context, Intent intent) {
+            if (Intent.ACTION_BATTERY_CHANGED.equals(intent.getAction())) {
+            	Log.d("ccccccccccccccccchanged","ACTION_BATTERY_CHANGED==");
+                int level = intent.getIntExtra("level", 0);
+                int scale = intent.getIntExtra("scale", 100);
+                // 0 - 100
+                int power = level * 100 / scale;
+                // setLevel(int level): level �ķ�Χ�� 0 -10000
+                clipDrawable.setLevel(calculateLevel(power));
+            }if(Intent.ACTION_BATTERY_LOW.equals(intent.getAction())){
+            	
+            }
+        }     
+    };
+    
+	//////////////////
+    private int calculateLevel(int progress) {
+        int leftOffest = MyUtils.dip2px(this, 2);
+        int powerLength = MyUtils.dip2px(this, 26.5f);// 40 px in hdpi
+        int totalLength = MyUtils.dip2px(this, 30.5f);// 49 px in hdpi
+        int level = (leftOffest + powerLength * progress / 100) * 10000 / totalLength;
+        return level;
+    }
+
+	
+
+}

@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:clickable="true"
+	 android:layout_marginTop="4dp"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".HomePageActivity" >
+    
+    <GridView 
+        android:id="@+id/app_list"
+        android:layout_width="fill_parent"
+        android:layout_height="360dp"
+        android:numColumns="3"
+        android:layout_marginRight="135dp"
+        android:horizontalSpacing="6dp"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@drawable/bar_slipe_short"
+        android:scrollbarTrackVertical="@drawable/bar_slipe"
+        android:fadeScrollbars="false"
+        ></GridView>
+
+</RelativeLayout>

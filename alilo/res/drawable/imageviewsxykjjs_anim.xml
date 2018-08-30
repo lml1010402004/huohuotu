@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@drawable/sxykj_js1" android:duration="150" />
+    <item android:drawable="@drawable/sxykj_js2" android:duration="150" />
+    <item android:drawable="@drawable/sxykj_js3" android:duration="150" />
+    <item android:drawable="@drawable/sxykj_js4" android:duration="150" />
+    <item android:drawable="@drawable/sxykj_js5" android:duration="150" />
+    <item android:drawable="@drawable/sxykj_js6" android:duration="150" /> 
+	<item android:drawable="@drawable/sxykj_js7" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js8" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js9" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js10" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js11" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js12" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js13" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js14" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js15" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js16" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js17" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js18" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js19" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js20" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js21" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js22" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js23" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js24" android:duration="150" />
+	<item android:drawable="@drawable/sxykj_js25" android:duration="150" />
+</animation-list>

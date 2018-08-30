@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/setting_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/brightness_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/settings_brightness_text" 
+            android:textColor="@color/white"
+            android:textSize="13pt"/>
+
+        <ImageButton
+            android:id="@+id/brightness_title_back"
+            android:layout_width="40dip"
+            android:layout_height="60dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="14dp"
+            android:background="#00000000"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+			<TextView 
+                android:id="@+id/show_brightness_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+		        android:layout_gravity="right"
+				android:layout_marginTop="40dip" 
+				android:textSize="20sp"
+                />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="10dip" >
+    
+
+            <SeekBar
+                android:id="@+id/sb_brightness"
+                android:layout_width="950dp"
+                android:layout_height="wrap_content"
+                android:max="155"
+			     android:layout_marginTop="10dp"
+			   android:maxHeight="10px"
+                android:minHeight="10px"
+                android:thumb="@drawable/brightness_slider_bg"
+                android:thumbOffset="0dip" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  android:background="@drawable/transparentforprotecteye"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="900dp"
+        android:layout_height="500dp"
+		android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/eyeprotect_background" >
+
+        <TextView
+            android:id="@+id/show_second_textview"
+            android:layout_width="140dp"
+            android:layout_height="146dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="317dp"
+            android:layout_marginTop="110dp"
+            android:textColor="@color/red"
+            android:gravity="center"
+            android:background="@drawable/eyeprotect_number_background"
+            android:textSize="80dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

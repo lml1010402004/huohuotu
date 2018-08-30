@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_view"
+    android:background="@drawable/startup_setting_baby_info"
+     >
+    
+     <include layout="@layout/startupguideline_title"/>
+     
+    <EditText
+        android:id="@+id/startup_baby_name"
+        android:layout_width="320dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="356dp"
+       android:layout_marginTop="250dp"
+        android:gravity="center"
+        android:maxLength="6"
+		 android:background="@null"
+        android:hint="@string/please_input_baby_name"
+        android:textSize="20dp" />
+    
+      <TextView
+        android:id="@+id/startup_baby_birthday"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="245dp"
+        android:gravity="center"
+        android:hint="@string/please_input_baby_birthday"
+        android:textSize="20dp" />
+      
+          <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/baby_nickname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="370dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_male"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="false"
+            android:drawableTop="@drawable/little_prince_selector11" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:background="#ffffff" />
+
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/little_girl_selector" />
+    </RadioGroup>
+     
+         <Button
+        android:id="@+id/startup_next_step"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="440dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/startup_next_step_selector" />
+
+    <Button
+        android:id="@+id/startup_jump_over"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="440dp"
+        android:layout_marginTop="530dp"
+        android:background="@drawable/startup_jump_over_selector" />
+     
+     
+     
+     
+     
+     
+
+</RelativeLayout>

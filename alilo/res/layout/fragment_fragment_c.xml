@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_third_page"
+    tools:context=".HomePageActivity"
+     >
+
+<!--     <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="140dp"
+        android:clickable="true"
+        android:src="@drawable/ic_icon2" /> -->
+        
+     <GridView 
+        android:id="@+id/the_second_app_list"
+        android:layout_width="520dp"
+        android:layout_height="440dp"
+        android:numColumns="3"
+		 android:layout_marginTop="130dp"
+		 android:layout_marginLeft="455dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        ></GridView>
+    
+</RelativeLayout>

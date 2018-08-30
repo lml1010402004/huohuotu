@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/setting_baby_info"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <ImageView
+        android:id="@+id/iv_wifi_status"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/image_battery"
+        android:src="@drawable/wifi_signal" />
+
+    <DigitalClock
+        android:id="@+id/digitalClock1"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="920dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/baby_name"
+        android:layout_width="270dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="356dp"
+        android:layout_marginTop="252dp"
+        android:gravity="center"
+		 android:background="@null"
+        android:maxLength="6"
+		android:singleLine="true"
+        android:hint="@string/please_input_baby_name"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/baby_birthday"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="245dp"
+        android:gravity="center"
+        android:hint="@string/please_input_baby_birthday"
+        android:textSize="20dp" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/baby_nickname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="370dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_male"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="false"
+            android:drawableTop="@drawable/little_prince_selector11" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:background="#ffffff" />
+
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/little_girl_selector" />
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/confirm_baby_info"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:background="@drawable/btn_login_selector" />
+
+    <ImageView
+        android:id="@+id/image_battery"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+		 android:layout_marginTop="4dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/iv_wifi_status"
+        android:layout_marginRight="123dp"
+        android:src="@drawable/battery" />
+
+</RelativeLayout>

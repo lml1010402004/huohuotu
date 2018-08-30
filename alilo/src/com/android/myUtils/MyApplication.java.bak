@@ -1,0 +1,142 @@
+package com.android.myUtils;
+
+import com.android.alilo.R;
+
+import android.app.Application;
+
+public class MyApplication extends Application{
+
+
+//This path of file used for open/close the eyeprotect.
+	public static String WRITEPROTECTEYEFILEPATH = "/sys/devices/2005a000.i2c/i2c-2/2-0050/hall_enable";
+    public static boolean FLAGOFSXKJ = true;
+
+
+//if without network,the ads should work properly.
+		public static String DEFAULTLINKOFALILO = "http://www.alilo.com.cn/";
+
+	//the index of locked icon.
+	public static int apk_locked = R.drawable.apk_locked;
+	
+	//the default passed apk for ljsw34scyxz.
+//	public static int default_passed_apk_ljsw34scyxz = 6;//tt
+	public static int default_passed_apk_ljsw34scyxz = 5;
+	public static int default_total_apk_ljsw34scyxz = 6;
+	
+	//the default passed apk for ljsw34lsytm.
+public static int default_passed_apk_ljsw34lsytm = 0;
+		//public static int default_passed_apk_ljsw34lsytm = 5;//tt
+	public static int default_total_apk_ljsw34lsytm = 5;
+	
+	//the default passed apk for ljsw34htj.
+	public static int default_passed_apk_ljsw34_htj = 0;
+//	public static int default_passed_apk_ljsw34_htj = 5;
+	public static int default_total_apk_ljsw34_htj = 5;
+
+	//the default passed apk for ljsw34ssybj.
+	public static int default_passed_apk_ljsw34_ssybj = 0;
+	//	public static int default_passed_apk_ljsw34_ssybj = 6;
+	public static int default_total_apk_ljsw34_ssybj = 6;
+	
+	//the default passed apk for ljsw45jtcs1.
+public static int default_passed_apk_ljsw45_jtcs1 = 5;
+	//	public static int default_passed_apk_ljsw45_jtcs1 = 5;
+	public static int default_total_apk_ljsw45_jtcs1 = 5;
+	
+	//the default passed apk for ljsw45wmdcw.
+	public static int default_passed_apk_ljsw45_wmdcw = 0;
+//	public static int default_passed_apk_ljsw45_wmdcw = 5;
+	public static int default_total_apk_ljsw45_wmdcw = 5;
+	
+	//the default passed apk for ljsw45gcylx.
+	public static int default_passed_apk_ljsw45_gcylx = 0;///////////
+	//	public static int default_passed_apk_ljsw45_gcylx = 5;///////////
+	public static int default_total_apk_ljsw45_gcylx = 5;
+	
+	//the default passed apk for ljsw45gcyzy.
+	public static int default_passed_apk_ljsw45_gcyzy = 0;
+	//	public static int default_passed_apk_ljsw45_gcyzy = 5;
+	public static int default_total_apk_ljsw45_gcyzy = 5;
+	
+	//the default passed apk for ljsw45hhtzets.
+	public static int default_passed_apk_ljsw45_hhtzets = 0;
+//	public static int default_passed_apk_ljsw45_hhtzets = 5;
+	public static int default_total_apk_ljsw45_hhtzets = 5;
+	
+	//the default passed apk for ljsw45hhtzets.
+//	public static int default_passed_apk_ljsw45_wmjzmcy = 0;
+	//public static int default_total_apk_ljsw45_wmjzmcy  = 5;
+	
+	//the default passed apk for ljsw56ljyx.
+	public static int default_passed_apk_ljsw56_ljyx = 5;
+	public static int default_total_apk_ljsw56_ljyx = 5;
+	
+	//the default passed apk for ljsw56zdwy.
+	public static int default_passed_apk_ljsw56_zdwy = 0;
+	//public static int default_passed_apk_ljsw56_zdwy = 5;
+	public static int default_total_apk_ljsw56_zdwy = 5;
+	
+	//the default passed apk for ljsw56znzl.
+	public static int default_passed_apk_ljsw56_znzl = 0;
+	//public static int default_passed_apk_ljsw56_znzl = 5;
+	public static int default_total_apk_ljsw56_znzl = 5;
+	
+	//the default passed apk for ljsw56jtcs2.
+//	public static int default_passed_apk_ljsw56_jtcs2 = 0;
+//	public static int default_total_apk_ljsw56_jtcs2 = 4;
+	
+	//the default passed apk for ljsw56jtcs2.
+//	public static int default_passed_apk_ljsw56_cxqd = 0;
+//	public static int default_total_apk_ljsw56_cxqd = 4;
+	
+	//the default passed apk for ljsw56sysz.
+	//public static int default_passed_apk_ljsw56_sysz = 0;
+		public static int default_passed_apk_ljsw56_sysz = 0;
+	public static int default_total_apk_ljsw56_sysz = 5;
+	
+	//the default passed apk for czl34.
+	public static int default_passed_apk_czl34 = 5;
+	public static int default_total_apk_czl34 = 20;
+	
+	//the default passed apk for czl45.
+	public static int default_passed_apk_czl45 =5;
+	public static int default_total_apk_czl45 = 21;
+	
+	//the default passed apk for czl56.
+	public static int default_passed_apk_czl56 = 5;
+	public static int default_total_apk_czl56 = 21;
+	
+	public static int default_eyes_protected_time = 20;//mins.
+	
+	public static int default_passed_apk_ydsgc = 3;
+	public static int default_total_apk_ydsgc = 6;
+
+    public static int default_passed_apk_zzl = 3;
+	public static int default_total_apk_zzl= 11;
+
+//数数与比较
+	public static int default_passed_apk_sxkj_ssybj = 5;
+	public static int default_total_apk_sxkj_ssybj = 6;
+
+// 顺序与分配
+	public static int default_passed_apk_sxkj_fpysx = 0;
+	public static int default_total_apk_sxkj_fpysx = 6;
+
+	// 数与数字
+	public static int default_passed_apk_sxkj_sysz= 0;
+	public static int default_total_apk_sxkj_sysz = 5;
+
+	// 加减计算
+	public static int default_passed_apk_sxkj_jjjs = 0;
+	public static int default_total_apk_sxkj_jjjs = 5;
+
+
+
+	public static int default_passed_apk_sxkj1 = 0;
+	
+//	//the default passed apk count for ljsw45.
+//	public static int default_passed_apk_ljsw45 = 1;
+	
+	public static String access_ads_url = "https://cloud.alilo.com.cn/l1/api/getBannerList";
+	
+}

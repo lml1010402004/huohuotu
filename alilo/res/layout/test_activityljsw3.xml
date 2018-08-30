@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:clickable="true"
+    android:padding="@dimen/activity_vertical_margin1"
+    android:paddingTop="@dimen/activity_vertical_margin1"
+    tools:context=".HomePageActivity" >
+
+   <ScrollView
+       android:id="@+id/scrollView0"
+       android:layout_width="680dp"
+       android:layout_height="400dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+       android:layout_marginRight="125dp"
+       android:scrollbarThumbVertical="@drawable/bar_slipe_short"
+       android:scrollbarTrackVertical="@drawable/bar_slipe"
+       android:fadeScrollbars="false"
+       android:scrollbars="vertical" >
+
+       <RelativeLayout
+           android:layout_width="630dp"
+           android:layout_height="wrap_content"
+           android:orientation="vertical" >
+           
+        	<com.android.customewidget.NestedExpandaleListView
+        		android:id="@+id/expandableListView"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:background="@null">
+			</com.android.customewidget.NestedExpandaleListView>
+           
+       </RelativeLayout>
+   </ScrollView>
+
+</RelativeLayout>
